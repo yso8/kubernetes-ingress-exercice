@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-a
+  template:
+    metadata:
+      labels:
+        app: api-a
+    spec:
+      containers:
+      - name: api-a
+        image: ys8o/api-a:latest
+        ports:
+        - containerPort: 80
